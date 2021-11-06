@@ -1,6 +1,7 @@
 package ar.edu.unlam.interfaz;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.TreeSet;
@@ -84,7 +85,9 @@ public class Arca {
 		treeSetDeSeresVivos.add(ballenaAzul);
 		System.out.println("\nTreeSet de Seres Vivos\n" + treeSetDeSeresVivos);
 		
-		
+		Collections.sort(arrayListDeSeresVivos);
+		System.out.println("\nArrayList de seres vivos\n" + arrayListDeSeresVivos);
+
 	}
 
 }

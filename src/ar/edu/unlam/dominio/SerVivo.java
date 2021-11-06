@@ -189,7 +189,7 @@ public class SerVivo implements Comparable<SerVivo>{
 
 	@Override
 	public int compareTo(SerVivo o) {
-		return (this.getEspecie().compareTo(o.getEspecie()) + this.getSexo().compareTo(o.getSexo()));
+		return (this.getEspecie().compareTo(o.getEspecie()) + this.getSexo().compareTo(o.getSexo()) + this.getGenero().compareTo(o.getGenero()));
 	}
 
 	

@@ -3,9 +3,12 @@ package test;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 import org.junit.Test;
 
@@ -87,6 +90,18 @@ public class TestAnimales {
 		
 		assertEquals(10, arrayListDeSeresVivos.size());
 		
+		// creo una nueva list filtrando por los que pertenecen a la clase Vertebrata
+		List<SerVivo> listDeSeresVivosQueSonDeLaClaseVertebrata = arrayListDeSeresVivos.stream().filter(SerVivo -> SerVivo.getClase().equals("Vertebrata")).collect(Collectors.toList()); 
+		assertEquals(4, listDeSeresVivosQueSonDeLaClaseVertebrata.size());
+		
+		// filtro por filo (enum)
+		List<SerVivo> listDeSeresVivosQueSonDelFiloChordata = arrayListDeSeresVivos.stream().filter(SerVivo -> SerVivo.getFilo().equals(Filo.CHORDATA)).collect(Collectors.toList());
+		assertEquals(9, listDeSeresVivosQueSonDelFiloChordata.size());
+		
+		//List<SerVivo> arrayListDeSeresVivosOrdenado;
+		// Practicar ordenamiento con sort
+		
+		
 		linkedListDeSeresVivos.add(guacamayo);
 		linkedListDeSeresVivos.add(guacamayo2);
 		linkedListDeSeresVivos.add(guacamayo3);
@@ -125,6 +140,8 @@ public class TestAnimales {
 		treeSetDeSeresVivos.add(gato);
 		
 		assertEquals(8, treeSetDeSeresVivos.size());
+		
+		
 	}
 
 }
